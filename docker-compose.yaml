@@ -1,0 +1,17 @@
+services:
+  notes:
+    container_name: 'notes'
+    build: .
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  db:
+    image: mariadb
+    container_name: 'notes-db'
+    environment:
+      MARIADB_ROOT_PASSWORD: notes-psw
+      MARIADB_DATABASE: notes-db
+    volumes:
+      - ./db:/var/lib/mysql
+    restart: unless-stopped

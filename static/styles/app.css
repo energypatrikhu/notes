@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	@apply bg-neutral-900 text-white h-full;
+}
+
+a {
+	@apply text-blue-400;
+}
+a:visited {
+	@apply text-blue-600;
+}
